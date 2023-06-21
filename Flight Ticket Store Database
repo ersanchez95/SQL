@@ -1,0 +1,30 @@
+--Create a store database, mine was for flight tickets
+
+CREATE TABLE flights (id integer primary key, destination_name text, price integer, airline text, number_of_stops integer, flight_type text);
+
+INSERT INTO flights VALUES 
+(1, "Cancun, Mexico", 205, "Aeromexico", 0, "International"),
+(2, "Ontario, Canada", 407, "United", 0, "International"),
+(3, "Atlanta, GA", 283, "United", 1, "Domestic"),
+(4, "Norfolk, VA", 296, "Spirit", 0, "Domestic"),
+(5, "New York, NY", 398, "Spirit", 2, "Domestic"),
+(6, "Rome, Italy", 744, "United", 3, "International"),
+(7, "Denver, CO", 420, "Southwest", 0, "Domestic"),
+(8, "Miami, FL", 305, "Southwest", 0, "Domestic"),
+(9, "Paris, France", 986, "Air France", 1, "International"),
+(10, "Boston, MA", 621, "United", 0, "Domestic"),
+(11, "Houston, TX", 182, "Spirit", 0, "Domestic"),
+(12, "Osaka, Japan", 1234, "Japan Airlines", 1, "International"),
+(13, "San Jose, Costa Rica", 384, "Southwest", 0, "International"),
+(14, "Seattle, WA", 213, "United", 1, "Domestic"),
+(15, "San Diego, CA", 367, "United", 0, "Domestic")
+;
+
+
+--Display the database ordered by ascending price
+SELECT * FROM flights ORDER BY price asc;
+
+--Where is the most expensive flight to and how much does it cost?
+SELECT destination_name, max(price) FROM flights;
+
+
